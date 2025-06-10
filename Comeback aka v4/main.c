@@ -3,6 +3,49 @@
 #include <math.h>
 #include <time.h>
 
+
+#include <stdio.h>
+int main() {
+int age = 30; // on déclare la valeur de la variable age a 30 
+int* p_age = &age; // on initialise le pointeur p_age sur l'adresse de age (donnée par &age)
+
+printf("Age avant modification : %d\n", age); // la ducoup on affiche l'age avant de la modifier 
+
+// On modifie la valeur à l'adresse pointée
+*p_age = 40; // on utilise '*' + 'p_age' pour avoir la valeur stockée dans l'adresse, et on modifie la valeur
+
+printf("Age après modification : %d\n", age); // Affiche 40 !
+
+return 0;
+
+}
+
+
+
+// age = 18 ; cest la variable de base, 
+// *p_age = valeur de age,
+// &age ; cest l'adresse de age,
+// p_age = &age; cest encore l'adresse,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 // on va faire struc avec voture marque et couleur, plus générer un plaque d'immatriculation
 
 struct Voiture {
