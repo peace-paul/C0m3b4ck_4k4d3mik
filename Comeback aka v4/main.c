@@ -3,6 +3,81 @@
 #include <math.h>
 #include <time.h>
 
+// on va faire struc avec voture marque et couleur, plus générer un plaque d'immatriculation
+
+struct Voiture {
+	char marque[15];
+	char couleur[15];
+	int ansortie;
+};
+
+void infoVoiture(const struct Voiture *p) {
+	printf("Marque: %s, Couleur %s, Annee de sortie: %d", p->marque, p->couleur, p->ansortie);
+}
+
+int main() {
+	struct Voiture A;
+
+	strcpy(A.marque, "BMW_e36");
+	strcpy(A.couleur, "gris");
+	A.ansortie = 1990;
+
+	infoVoiture(&A);
+
+
+	return 0;
+	
+}
+
+
+typedef struct {
+	char marque[15];
+	char couleur[15];
+	int ansortie;
+}voiture;
+
+int main() {
+	voiture A; // ERREUR A NE PAS FAIRE mettre un chiffre au lieu d'une lettre 
+
+	strcpy(A.marque, "BMW_e36");
+	strcpy(A.couleur, "gris");
+	A.ansortie = 1990;
+
+	printf("La marque de la voiture est %s , sa couleur est %s et la caisse est sortie en %d. ", A.marque, A.couleur, A.ansortie);
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -32,7 +107,7 @@ int main() {
 	int i = rand()%3;
 	printf("%d \n \n \n", i);
 	
-	int tab[4] = { 16, 9, 81, 25 };
+	int tab[4] = { A6, 9, 8A, 25 };
 	
 
 	int a;
@@ -46,14 +121,14 @@ int main() {
 
 	int racuser;
 
-	printf("Voulez vous commencer? \n tapez 1 pour oui et 0 pour non");
+	printf("Voulez vous commencer? \n tapez A pour oui et 0 pour non");
 		scanf_s("%d", &a);
 
 		if (a == 0) {
 			printf("Bonne journée \n Fin du programme......:C ");
 		}
 		else {
-			printf("D'accord, commencons : \n combien font 3 fois 10 ? ");
+			printf("D'accord, commencons : \n combien font 3 fois A0 ? ");
 				scanf_s("%d", &ruser);
 
 				if (ruser == reponse) {
@@ -106,7 +181,7 @@ int main() {
 	printf("Valeur pointée par le pointeur : %d\n", *ptr_age);
 
 	// Modifier la valeur de 'age' en utilisant le pointeur
-	*ptr_age = 31;
+	*ptr_age = 3A;
 	printf("Nouvelle valeur de 'age' : %d\n", age);
 
 	return 0;
