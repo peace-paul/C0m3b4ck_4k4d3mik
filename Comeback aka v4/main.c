@@ -1,9 +1,214 @@
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
 
 
+
+// MARCHE PAS A REGLER
+/*
+#include <stdio.h>
+#define TAILLE_CLASSE 3
+
+struct Etudiant {
+	char nom[50];
+	float moyenne;
+};
+
+// Prend un pointeur sur le tableau pour le remplir
+void initialiser_classe(struct Etudiant classe[], int taille) {
+	for (int i = 0; i < taille; i++) {
+		printf("--- Saisie Etudiant %d ---\n", i + 1);
+		printf("Nom : ");
+		scanf_s("%s", classe[i].nom);
+		printf("Moyenne : ");
+		scanf_s("%f", &classe[i].moyenne);
+	}
+}
+
+void afficher_classe(const struct Etudiant classe[], int taille) {
+	printf("\n--- Liste de la classe ---\n");
+	for (int i = 0; i < taille; i++) {
+		printf("- %s, moyenne: %.2f\n", classe[i].nom, classe[i].moyenne);
+	}
+}
+
+// Retourne un pointeur sur l'étudiant avec la meilleure note
+struct Etudiant* meilleur_etudiant(struct Etudiant classe[], int taille) {
+	if (taille == 0) {
+		return NULL;
+	}
+
+	struct Etudiant* p_meilleur = &classe[0];
+
+	for (int i = 1; i < taille; i++) {
+		if (classe[i].moyenne > p_meilleur->moyenne) {
+			p_meilleur = &classe[i];
+		}
+	}
+	return p_meilleur;
+}
+
+int main() {
+	struct Etudiant ma_classe[TAILLE_CLASSE];
+
+	initialiser_classe(ma_classe, TAILLE_CLASSE);
+	afficher_classe(ma_classe, TAILLE_CLASSE);
+
+	struct Etudiant* major_de_promo = meilleur_etudiant(ma_classe, TAILLE_CLASSE);
+
+	if (major_de_promo != NULL) {
+		printf("\nLe meilleur etudiant est %s avec %.2f de moyenne.\n",
+			major_de_promo->nom, major_de_promo->moyenne);
+	}
+
+	return 0;
+}
+
+
+
+
+
+/*
+#include <stdio.h>
+
+struct Etudiant {
+char nom[50];
+char prenom[50];
+float moyenne;
+};
+
+void afficher_etudiant(struct Etudiant etu);  // prototype de la fonction (sers a la introduire la fonction ici pour qu'elle soit
+											  // lue au début du programme mais sans la définir au début)
+
+// La fonction prend un POINTEUR sur Etudiant
+void augmenter_moyenne(struct Etudiant* p_etu, float points) {
+	// On utilise la flèche '->' pour accéder à un membre via un pointeur
+	p_etu->moyenne += points;
+	// C'est l'équivalent de : (*p_etu).moyenne += points;
+}
+
+int main() {
+	struct Etudiant etu1;
+	strcpy(etu1.nom, "Martin");
+	strcpy(etu1.prenom, "Alice");
+	etu1.moyenne = 16.0;
+
+	printf("Avant augmentation : ");
+	afficher_etudiant(etu1);
+
+	augmenter_moyenne(&etu1, 1.5); // On passe l'adresse de la structure
+
+	printf("Après augmentation : ");
+	afficher_etudiant(etu1); // Affiche une moyenne de 17.5
+
+	return 0;
+}
+//... définition de afficher_etudiant ici
+void afficher_etudiant(struct Etudiant etu) {
+	printf("Etudiant: %s %s, Moyenne: %.2f\n", etu.prenom, etu.nom, etu.moyenne);
+}
+
+
+
+
+
+
+
+/*
+#include <stdio.h>
+
+struct Etudiant {
+	char nom[50];
+	char prenom[50];
+	float moyenne;
+};
+
+void afficher_etudiant(struct Etudiant etu) {
+	printf("Etudiant: %s %s, Moyenne: %.2f\n", etu.prenom, etu.nom, etu.moyenne);
+}
+
+int main() {
+	struct Etudiant etu1;
+	strcpy(etu1.nom, "Martin");
+	strcpy(etu1.prenom, "Alice");
+	etu1.moyenne = 16.0;
+
+	afficher_etudiant(etu1);
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+#include <stdio.h>
+
+struct Etudiant {
+	char nom[50];
+	char prenom[50];
+	float moyenne;
+};
+
+int main() {
+	struct Etudiant etu1;
+
+	strcpy(etu1.nom, "Dupont");
+	strcpy(etu1.prenom, "Jean");
+	etu1.moyenne = 14.5;
+
+	printf("Etudiant: %s %s, Moyenne: %.2f\n", etu1.prenom, etu1.nom, etu1.moyenne);
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+#include <stdio.h>
+void incrementer(int *valeur) {
+(*valeur)++; // ou *valeur = *valeur + 1;
+}
+
+int main() {
+	int compteur = 10;
+	printf("Avant : %d\n", compteur);
+	incrementer(&compteur); // On passe l'adresse de compteur
+	printf("Après : %d\n", compteur); // Affiche 11
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 #include <stdio.h>
 int main() {
 int age = 30; // on déclare la valeur de la variable age a 30 
